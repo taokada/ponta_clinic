@@ -1,0 +1,6 @@
+<%= form_tag("/articles/#{@article.id}/comments/#{@comment.id}/update") do %>
+  <textarea name="comment" class="form-control"><%= @comment.body %></textarea>
+  <textarea name="article_id" class="hidden"><%= @article.id %></textarea>
+  <textarea name="user_id" class="hidden"><%= current_user.id %></textarea>
+  <button type="submit" class="btn btn-primary">編集完了</button>
+<% end %>

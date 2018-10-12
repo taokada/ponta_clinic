@@ -1,0 +1,23 @@
+<h1>Articles#top</h1>
+<p>Find me in app/views/articles/top.html.erb</p>
+
+<%= @article.id %>
+
+<%= @article.content %>
+
+<p>コメント（<%= @article.comments.count %>）</p>
+
+<br>
+<% @comments.each do |comment| %>
+  <p><%= comment.user_id %> さん</p>
+  <p><%= comment.body %></p><br>
+  <%= link_to("編集","/articles/#{@article.id}/comments/#{comment.id}/edit") %>
+  <%= link_to("削除","/articles/#{@article.id}/comments/#{comment.id}",method: :post) %>
+<% end %>
+
+<p>次はarticle_idごとに投稿できるformを作る！</p>
+
+<% if user_signed_in? %>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
+<% end %>

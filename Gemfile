@@ -74,3 +74,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
 end
+
+gem 'thin'
+gem 'jquery-rails'

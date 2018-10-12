@@ -1,3 +1,25 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.box {
+ text-decoration: none;
+}
+.article{
+  width:50%;
+  margin: auto;
+  padding: 20px;
+  background: #389bc2;
+  color: #ffffff;
+  text-align: center;
+}
+.comment{
+  width:50%;
+  margin: auto;
+  padding: 20px;
+  background: #fdb657;
+  color: #ffffff;
+  text-align: center;
+}
+.article:hover,.comment:hover{
+  background: #7F7B79;
+}

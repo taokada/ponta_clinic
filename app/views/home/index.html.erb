@@ -1,5 +1,73 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ponta_clinic</title>
+  <link rel="stylesheet" href="app/assets/stylesheets/home.scss">
+	</head>
+
+
+	<body>
+
+<h1>ponta_clinic</h1>
+<p>カラダのエンタメサイト</p>
+<% article0 = @articles[0] %>
+ <%= link_to(articles_show_path(id:article0.id), class: 'box',) do %>
+	 <div class="article">
+		<h1>ここに写真</h1>
+		<%= article0.content %>
+	 </div>
+
+	 <div class="comment">
+     <p>ここに誰がしかのコメントを入れたい</p>
+   </div>
+ <% end %>
+
+
+
+
+<% article1 = @articles[1] %>
+<%= link_to(articles_show_path(id:article1.id), class: 'box') do %>
+	<div class="article">
+	 <h1>ここに写真</h1>
+	 <%= article1.content %>
+	</div>
+
+	<div class="comment">
+		<p>ここに誰がしかのコメントを入れたい</p>
+	</div>
+<% end %>
+
+
+<h2>コメント一覧を作るのは簡単そう</h2>
+<p>疑問１：post_controllerで投稿一覧は作れる。<br>
+でも各投稿記事に対しての対応したコメント一覧にするにはどうする?</p>
+
+
+
+
+
+
+
+
+<p>ユーザー情報を乗っけておくスペース</p>
+<p>記事を選んだらポイント３項目＋コメント一覧</p>
+<p>記事本文まで行ったらpick、コメント機能、いいね的機能</p>
+<p></p>
+<p></p>
+<p></p>
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
 
 
 
@@ -11,3 +79,6 @@
         <%= link_to 'login', new_user_session_path  %>
       <% end %>
     </nav>
+
+  </body>
+</html>
