@@ -1,0 +1,8 @@
+<%= @user.id %>
+<br>
+
+<% @my_articles.each do |my_article| %>
+ <%= my_article["id"] %>
+ <%= my_article["content"] %>
+ <br>
+<% end %>

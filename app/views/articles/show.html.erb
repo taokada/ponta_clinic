@@ -5,6 +5,8 @@
 
 <%= @article.content %>
 
+<%= link_to("保存する","/bookmarks/#{@article.id}/toggle") %>
+
 <p>コメント（<%= @article.comments.count %>）</p>
 
 <br>
@@ -12,7 +14,14 @@
   <p><%= comment.user_id %> さん</p>
   <p><%= comment.body %></p><br>
   <%= link_to("編集","/articles/#{@article.id}/comments/#{comment.id}/edit") %>
-  <%= link_to("削除","/articles/#{@article.id}/comments/#{comment.id}",method: :post) %>
+   <% if current_user == nil %>
+    <%= "" %>
+   <% elsif current_user.id == comment.user_id%>
+    <%= link_to("削除","/articles/#{@article.id}/comments/#{comment.id}",method: :post) %>
+   <% else %>
+    <%= "" %>
+   <% end %>
+
 <% end %>
 
 <p>次はarticle_idごとに投稿できるformを作る！</p>

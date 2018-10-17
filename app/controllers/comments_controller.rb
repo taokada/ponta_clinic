@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+
+  before_action :authenticate_user!, :only => [:create, :edit, :update]
+
+
+
+
   def aaa
   end
 
