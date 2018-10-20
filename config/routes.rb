@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+  get 'likes/destroy'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  resources :likes, only: [:create, :destroy]
 
 
 

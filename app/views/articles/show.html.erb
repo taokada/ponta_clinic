@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ponta_clinic</title>
+  <link rel="stylesheet" href="app/assets/stylesheets/home.scss">
+</head>
+
+
+<body>
+
 <h1>Articles#top</h1>
 <p>Find me in app/views/articles/top.html.erb</p>
 
@@ -10,9 +22,12 @@
 <p>コメント（<%= @article.comments.count %>）</p>
 
 <br>
-<% @comments.each do |comment| %>
+
+ <% @comments.each do |comment| %>
+ <div class = "comment" id="comment-<%= comment.id %>" data- comment-id="<%= comment.id %>">
   <p><%= comment.user_id %> さん</p>
   <p><%= comment.body %></p><br>
+	<%= render "likes/like", comment: comment %>
   <%= link_to("編集","/articles/#{@article.id}/comments/#{comment.id}/edit") %>
    <% if current_user == nil %>
     <%= "" %>
@@ -21,6 +36,7 @@
    <% else %>
     <%= "" %>
    <% end %>
+ </div>
 
 <% end %>
 
@@ -30,3 +46,4 @@
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
 <% end %>
+</body>

@@ -77,3 +77,5 @@ end
 
 gem 'thin'
 gem 'jquery-rails'
+gem 'counter_culture'
+gem 'bootstrap'
