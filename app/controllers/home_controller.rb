@@ -8,4 +8,7 @@ class HomeController < ApplicationController
     @articles=Article.all
 
   end
+
+  def category
+  end
 end

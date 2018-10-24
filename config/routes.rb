@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   }
   get 'home/index'
   get 'home/top'
+  get 'home/category'
 
   get 'articles/show'
+  get 'articles/clean_blog'
 
   resources :articles do
     resources :comments
